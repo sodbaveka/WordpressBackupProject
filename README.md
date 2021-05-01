@@ -13,8 +13,7 @@ Hello World!
 My name is Mickaël alias sodbaveka.
 I created this repository as a lab to discover git, gitHub, Bash, Python and Ansible.
 
-My project as a learner is to create a python (or bash) script to automate the saving of a wordpress website.
-These scripts will be factored into Ansible modules.
+My project as a learner is to create an Ansible playbook to automate the installation of a wordpress website.
 
 Running this playbook will perform the following actions on your Ansible hosts :
 - Install aptitude, which is preferred by Ansible as an alternative to the apt package manager.
