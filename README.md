@@ -16,8 +16,19 @@ I created this repository as a lab to discover git, gitHub, Bash, Python and Ans
 My project as a learner is to create a python (or bash) script to automate the saving of a wordpress website.
 These scripts will be factored into Ansible modules.
 
-Ansible will therefore have the following task:
-- TO COMPLETE.
+Running this playbook will perform the following actions on your Ansible hosts :
+- Install aptitude, which is preferred by Ansible as an alternative to the apt package manager.
+- Installation of the required LAMP packages and PHP extensions.
+- Creation and validation of a new VirtualHost Apache for the WordPress site.
+- Activation of the Apache rewrite module (mod_rewrite).
+- Disable the default Apache website.
+- Sets the password for the MySQL root user.
+- Removal of anonymous MySQL accounts and the test database.
+- Creation of a new MySQL database and a user for the WordPress site.
+- Configure the UFW parameter to allow HTTP traffic on the configured port (80 by default).
+- Download and unpack WordPress.
+- Set the correct directory ownership and permissions.
+- Define the wp-config.php file using the template provided.
 
 Please feel free to message me if you have any questions.
 
@@ -27,7 +38,7 @@ Bye ;-)
 ***
 A list of technologies used within the project :
 * Linux Debian 10.8
-* ansible 2.10.5
+* ansible 2.10.8
   * config file = /etc/ansible/ansible.cfg
   * configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
   * ansible python module location = /usr/local/lib/python3.7/dist-packages/ansible
@@ -57,5 +68,5 @@ $ ansible-playbook -i inventories/mainInventory.yml -K mainPlaybook.yml
 ### Ressources
 ***
 * https://docs.ansible.com/
-* https://ldap3.readthedocs.io/en/latest/
+* https://wordpress.org
 * ‘python for dummies’ :-p 

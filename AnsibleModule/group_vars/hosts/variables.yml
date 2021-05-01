@@ -1,0 +1,28 @@
+---
+#var1: "group variable"
+ansible_python_interpreter: /usr/bin/python3
+# ldap_main_host: 'srv-ldap-01'
+# admin_login: "admin"
+# admin_password: "theseus"
+# organization: "sodbaveka"
+# top_level_domain: "com"
+# domain_name: "{{organization + '.' + top_level_domain}}"
+# top_dn: "{{'dc=' + organization + ',dc=' + top_level_domain}}"
+# admin_dn: "{{'cn=' + admin_login + ',' + top_dn}}"
+# db_format: "MDB"
+# path_to_ldif_file: "/tmp/annuary_backup.ldif"
+
+#System Settings
+php_modules: [ 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+
+#MySQL Settings
+mysql_root_password: "theseus"
+mysql_db: "WordPress"
+mysql_user: "theseus"
+mysql_password: "theseus"
+
+#HTTP Settings
+http_host: "sodbaveka"
+http_conf: "sodbaveka.conf"
+http_port: "80"
+...

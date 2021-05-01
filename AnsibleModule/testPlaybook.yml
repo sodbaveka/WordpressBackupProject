@@ -1,0 +1,50 @@
+---
+- name: Installing vlc
+  hosts:  hosts
+  remote_user:  theseus
+  become: yes
+  vars:
+     var1: "variable de playbook"
+  tasks:
+  - name: Tâche 01 - message
+    debug:
+      msg: "ceci est un message avec {{var1}}"
+  - name: Tâche 02 - update cache
+    apt:
+      update_cache: yes
+  - name: Tâche 03 - install vlc
+    apt:
+      name: vlc
+      state: present
+
+# - name: Uninstalling softwares
+#   hosts:  hosts
+#   remote_user:  theseus
+#   become: yes
+#   tasks:
+#     - name: Uninstalling slapd
+#       apt:
+#         name: slapd
+#         state: absent
+#         purge: yes
+#         update_cache: yes
+#     - name: Uninstalling ldap-utils
+#       apt:
+#         name: ldap-utils
+#         state: absent
+#         purge: yes
+#         update_cache: yes
+#     - name: Uninstalling ldap-account-manager
+#       apt:
+#         name: ldap-account-manager
+#         state: absent
+#         purge: yes
+#         update_cache: yes
+    
+- name: Final message
+  hosts: hosts
+  tasks:
+    - name: Final message
+      debug:
+        msg: "All Playbook tasks are completed"
+...

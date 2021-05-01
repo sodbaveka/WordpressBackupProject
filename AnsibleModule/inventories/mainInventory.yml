@@ -1,0 +1,5 @@
+all:
+  children:
+    hosts:
+      hosts:
+        srv-wp-10
