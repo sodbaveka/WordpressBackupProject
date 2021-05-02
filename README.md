@@ -48,7 +48,7 @@ A list of technologies used within the project :
 ***
 * Download :
 ```
-$  git clone https://github.com/sodbaveka/WordpressBackupProject.git
+$  git clone hhttps://github.com/sodbaveka/wordpress_installation_with_ansible.git
 ```
 * Complete the path to utility classes :
   * In /etc/ansible/ansible.cfg, add the library/utils directory to the option 'module_utils'.
