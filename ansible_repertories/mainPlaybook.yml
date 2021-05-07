@@ -26,7 +26,7 @@
         state: directory
         owner: "www-data"
         group: "www-data"
-        mode: '0755'
+        mode: '0777'
       tags: [ apache ]
 
     - name: Set up Apache VirtualHost
@@ -127,11 +127,11 @@
       tags: [ wordpress ]
 
     - name: Set permissions for directories
-      shell: "/usr/bin/find /var/www/{{ http_host }}/wordpress/ -type d -exec chmod 750 {} \\;"
+      shell: "/usr/bin/find /var/www/{{ http_host }}/wordpress/ -type d -exec chmod 777 {} \\;"
       tags: [ wordpress ]
 
     - name: Set permissions for files
-      shell: "/usr/bin/find /var/www/{{ http_host }}/wordpress/ -type f -exec chmod 640 {} \\;"
+      shell: "/usr/bin/find /var/www/{{ http_host }}/wordpress/ -type f -exec chmod 777 {} \\;"
       tags: [ wordpress ]
 
     - name: Set up wp-config
@@ -139,6 +139,17 @@
         src: "etc/wp-config.php.j2"
         dest: "/var/www/{{ http_host }}/wordpress/wp-config.php"
       tags: [ wordpress ]
+
+    # - name: Transfer the script
+    #   template: 
+    #     src: /home/theseus/wordpress_installation_with_ansible/ansible_repertories/library/utils/wprestore.sh 
+    #     dest: /home/theseus 
+    #     mode: 0777
+    #   tags: [ wordpress_restore_script ]
+
+    - name: Transfer & execute the script
+      script: /home/theseus/wordpress_installation_with_ansible/ansible_repertories/library/utils/wprestore.sh 
+      tags: [ wordpress_restore_script ]
 
   handlers:
     - name: Reload Apache

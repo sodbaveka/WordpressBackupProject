@@ -2,4 +2,4 @@ all:
   children:
     hosts:
       hosts:
-        srv-wp-02
+        srv-wp-03
